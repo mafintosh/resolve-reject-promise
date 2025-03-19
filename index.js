@@ -1,11 +1,15 @@
 let tmpResolve = null
 let tmpReject = null
 
-module.exports = function resolveRejectPromise () {
-  const promise = new Promise(setTmp)
-  const result = { resolve: tmpResolve, reject: tmpReject, promise }
-  tmpResolve = tmpReject = null
-  return result
+if (Promise.withResolvers) {
+  module.exports = Promise.withResolvers.bind(Promise)
+} else {
+  module.exports = function resolveRejectPromise () {
+    const promise = new Promise(setTmp)
+    const result = { promise, resolve: tmpResolve, reject: tmpReject }
+    tmpResolve = tmpReject = null
+    return result
+  }
 }
 
 function setTmp (resolve, reject) {
