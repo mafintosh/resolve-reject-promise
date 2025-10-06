@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "format": "prettier --write .",
-    "lint": "prettier --check .",
-    "test": ""
+    "test": "prettier --check ."
   },
   "repository": {
     "type": "git",
