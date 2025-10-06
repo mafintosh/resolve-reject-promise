@@ -4,10 +4,9 @@
   "description": "Create an inverted promise with no function allocs",
   "main": "index.js",
   "scripts": {
-    "test": "standard"
-  },
-  "devDependencies": {
-    "standard": "^17.1.2"
+    "format": "prettier --write .",
+    "lint": "prettier --check .",
+    "test": ""
   },
   "repository": {
     "type": "git",
@@ -18,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/mafintosh/resolve-reject-promise/issues"
   },
-  "homepage": "https://github.com/mafintosh/resolve-reject-promise"
+  "homepage": "https://github.com/mafintosh/resolve-reject-promise",
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "prettier-config-holepunch": "^1.0.0"
+  }
 }
