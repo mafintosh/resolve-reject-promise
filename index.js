@@ -4,7 +4,7 @@ let tmpReject = null
 if (Promise.withResolvers) {
   module.exports = Promise.withResolvers.bind(Promise)
 } else {
-  module.exports = function resolveRejectPromise () {
+  module.exports = function resolveRejectPromise() {
     const promise = new Promise(setTmp)
     const result = { promise, resolve: tmpResolve, reject: tmpReject }
     tmpResolve = tmpReject = null
@@ -12,7 +12,7 @@ if (Promise.withResolvers) {
   }
 }
 
-function setTmp (resolve, reject) {
+function setTmp(resolve, reject) {
   tmpResolve = resolve
   tmpReject = reject
 }
