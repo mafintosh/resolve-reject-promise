@@ -8,7 +8,7 @@ npm install resolve-reject-promise
 
 ## Usage
 
-``` js
+```js
 const rrp = require('resolve-reject-promise')
 
 const { resolve, reject, promise } = rrp()
